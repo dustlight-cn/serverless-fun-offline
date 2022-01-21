@@ -81,7 +81,6 @@ class KubelessOfflinePlugin {
 
     const routes = compact(flatten(
       map(functions, (spec, name) => {
-        console.log(this.service.provider)
         const functionEnvironment = Object.assign({}, process.env, this.service.provider.environment, this.service.functions[name].environment);
         // use serverless default http event if none are specified
         // https://serverless.com/framework/docs/providers/kubeless/events/http/
